@@ -5,7 +5,7 @@ from .ledger import CostLedger
 from .providers import SimulatedProvider, OpenAICompatibleProvider
 from .types import ChatRequest, ChatResponse, Message, Usage
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 __all__ = [
     "Gateway",
