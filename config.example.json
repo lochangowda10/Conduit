@@ -1,0 +1,82 @@
+{
+  "_comment": "Copy to config.json. Providers marked optional are skipped if their API key env var is missing, so the same file works on every teammate's laptop. Model IDs and prices change often: check each provider's docs and update them.",
+
+  "routing": {
+    "strategy": "smart",
+    "routing_weights": {"w_cost": 0.6, "w_latency": 0.3, "w_errors": 0.1}
+  },
+
+  "cache": {
+    "cache_enabled": true,
+    "semantic_cache": true,
+    "similarity_threshold": 0.85,
+    "cache_ttl_s": 3600,
+    "cache_capacity": 10000,
+    "cache_max_temperature": 0.3,
+    "entity_guard": true,
+    "idf_weighting": true,
+    "embedder": "hashing"
+  },
+
+  "resilience": {
+    "max_attempts_per_provider": 2,
+    "backoff_base_s": 0.1,
+    "max_providers_per_request": 3,
+    "breaker_failure_threshold": 5,
+    "breaker_recovery_s": 15,
+    "hedge_after_ms": 2500
+  },
+
+  "limits": {
+    "rate_limit_rps": 20,
+    "rate_limit_burst": 40,
+    "queue_timeout_s": 5,
+    "budget_usd": 5.0
+  },
+
+  "log_path": "logs/requests.jsonl",
+
+  "providers": [
+    {
+      "type": "openai_compatible",
+      "name": "groq-small",
+      "optional": true,
+      "base_url": "https://api.groq.com/openai/v1",
+      "api_key_env": "GROQ_API_KEY",
+      "model": "llama-3.1-8b-instant",
+      "tier": "small",
+      "input_price_per_m": 0.05,
+      "output_price_per_m": 0.08,
+      "timeout_s": 30
+    },
+    {
+      "type": "openai_compatible",
+      "name": "gemini-flash",
+      "optional": true,
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+      "api_key_env": "GEMINI_API_KEY",
+      "model": "gemini-2.5-flash",
+      "tier": "medium",
+      "input_price_per_m": 0.30,
+      "output_price_per_m": 2.50,
+      "timeout_s": 60
+    },
+    {
+      "type": "local",
+      "name": "ollama-local",
+      "optional": true,
+      "enabled": false,
+      "model": "llama3.2:3b",
+      "tier": "small"
+    },
+    {
+      "type": "simulated",
+      "name": "sim-backup",
+      "model": "sim-mini",
+      "tier": "small",
+      "latency_median_ms": 300,
+      "input_price_per_m": 0.10,
+      "output_price_per_m": 0.40
+    }
+  ]
+}

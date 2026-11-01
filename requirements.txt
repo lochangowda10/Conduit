@@ -1,0 +1,10 @@
+# Runtime: the gateway core needs only NumPy. Pandas + Matplotlib power analytics and charts.
+numpy>=1.26
+pandas>=2.0
+matplotlib>=3.8
+
+# Development
+pytest>=8.0
+
+# Optional: higher-recall semantic cache (set "embedder": "sentence-transformer" in config)
+# sentence-transformers>=3.0

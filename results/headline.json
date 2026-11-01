@@ -1,0 +1,22 @@
+{
+  "requests_per_scenario": 1000,
+  "arrival_rate_rps": 40.0,
+  "outage_window_fraction": [
+    0.3,
+    0.5
+  ],
+  "baseline_success_rate": 0.761,
+  "full_success_rate": 1.0,
+  "baseline_cost_per_1k_usd": 0.833757,
+  "full_cost_per_1k_usd": 0.0659468,
+  "cost_reduction_pct": 92.09040523797701,
+  "baseline_p50_ms": 1228.548,
+  "full_p50_ms": 238.09,
+  "baseline_p95_ms": 3415.054,
+  "full_p95_ms": 1002.2967499999995,
+  "baseline_p99_ms": 5488.8022,
+  "full_p99_ms": 2143.89705,
+  "full_cache_hit_rate": 0.444,
+  "full_false_hits": 2,
+  "full_underserved_rate": 0.0035971223021582736
+}

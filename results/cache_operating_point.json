@@ -1,0 +1,10 @@
+{
+  "threshold": 0.85,
+  "hit_rate": 0.5983333333333334,
+  "false_hit_rate": 0.0005571030640668524,
+  "wrong_answers_per_1k": 0.3333333333333333,
+  "recall": 0.7669944420692604,
+  "oracle_hit_rate": 0.7796666666666666,
+  "guard_rejections": 151,
+  "config": "hashing + IDF + guard"
+}
