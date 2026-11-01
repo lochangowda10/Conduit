@@ -132,3 +132,12 @@ results/            benchmark CSVs and charts
 Single process (state in memory); heuristic router calibrated on synthetic prompts; estimated token
 counts when a provider doesn't report usage; no request coalescing for concurrent identical misses;
 hashing embeddings can confuse long prompts that differ by one word.
+
+## Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) and our
+[Code of Conduct](CODE_OF_CONDUCT.md) before opening a pull request.
+
+## License
+
+Released under the [MIT License](LICENSE). © 2026 Lochan Gowda.

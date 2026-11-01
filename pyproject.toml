@@ -31,6 +31,11 @@ dev = [
     "pytest>=8.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/lochangowda10/Conduit"
+Repository = "https://github.com/lochangowda10/Conduit"
+Issues = "https://github.com/lochangowda10/Conduit/issues"
+
 [project.scripts]
 conduit = "conduit.__main__:main"
 
