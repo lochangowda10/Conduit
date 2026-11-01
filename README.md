@@ -70,11 +70,25 @@ client ─► HTTP server ─► 1 cache ──hit──► answer (0.15 ms exac
 ## Quick start
 
 ```bash
-pip install -r requirements.txt
+pip install .
 python -m pytest -q          # 83 tests
-python -m conduit stats      # cache + routing demo
-python -m conduit serve      # gateway on http://127.0.0.1:8080/v1
-python -m conduit tour       # every course concept, demonstrated live
+conduit stats                # cache + routing demo
+conduit serve                # gateway on http://127.0.0.1:8080/v1
+conduit tour                 # every course concept, demonstrated live
+```
+
+## Installation from PyPI
+
+```bash
+pip install lochangowda10/conduit
+```
+
+## Development install
+
+```bash
+git clone https://github.com/lochangowda10/Conduit.git
+cd Conduit
+pip install .
 ```
 
 Real providers: `cp config.example.json config.json`, export `GROQ_API_KEY` / `GEMINI_API_KEY`,

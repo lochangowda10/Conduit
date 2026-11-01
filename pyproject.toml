@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "conduit"
+version = "1.0.0"
+description = "A self-hosted, OpenAI-compatible LLM gateway that makes LLM calls cheaper, more reliable and faster"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Lochan Gowda", email = "lochan@example.com"}
+]
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.0",
+    "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+conduit = "conduit:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["conduit", "conduit.*"]

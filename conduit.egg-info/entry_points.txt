@@ -1,0 +1,2 @@
+[console_scripts]
+conduit = conduit.__main__:main
