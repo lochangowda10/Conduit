@@ -80,7 +80,7 @@ conduit tour                 # every course concept, demonstrated live
 ## Installation from PyPI
 
 ```bash
-pip install lochangowda10/conduit
+pip install lochangowda10-conduit
 ```
 
 ## Development install

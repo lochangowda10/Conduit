@@ -12,4 +12,6 @@ results/.done
 conduit.egg-info/
 *.whl
 dist/
+build/
+dist_verify/
 *.egg-info/
