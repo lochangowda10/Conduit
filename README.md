@@ -1,5 +1,11 @@
 # Conduit
 
+[![PyPI version](https://img.shields.io/pypi/v/lochangowda10-conduit.svg)](https://pypi.org/project/lochangowda10-conduit/)
+[![Python versions](https://img.shields.io/pypi/pyversions/lochangowda10-conduit.svg)](https://pypi.org/project/lochangowda10-conduit/)
+[![Downloads](https://img.shields.io/pypi/dm/lochangowda10-conduit.svg)](https://pypi.org/project/lochangowda10-conduit/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/lochangowda10/Conduit?style=social)](https://github.com/lochangowda10/Conduit)
+
 **A self-hosted, OpenAI-compatible LLM gateway that makes LLM calls cheaper, more reliable and faster.**
 Point any OpenAI-SDK app at it by changing one URL; Conduit adds semantic caching, complexity-based
 model routing, retries with circuit breakers and fallback, hedged requests, rate limiting, a spending cap,
@@ -132,6 +138,15 @@ results/            benchmark CSVs and charts
 Single process (state in memory); heuristic router calibrated on synthetic prompts; estimated token
 counts when a provider doesn't report usage; no request coalescing for concurrent identical misses;
 hashing embeddings can confuse long prompts that differ by one word.
+
+## Support the project
+
+If you find Conduit useful, please consider:
+
+- **Starring the repository** so others can discover it: https://github.com/lochangowda10/Conduit
+- **Reporting bugs and suggesting features** via [GitHub Issues](https://github.com/lochangowda10/Conduit/issues)
+- **Sharing it** with your team or writing about it
+- **Contributing** code, tests, or docs — see [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Contributing
 
