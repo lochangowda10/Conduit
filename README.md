@@ -15,7 +15,7 @@ client.chat.completions.create(model="auto", messages=[{"role": "user", "content
 
 Benchmark: 1,000 requests per configuration, Poisson arrivals at 40 req/s, three **simulated** providers
 (log-normal latency, 2% 5xx, 1% 429, 4% multi-second stalls), with the premium provider **down for
-30–50% of every run**. Reproduce with `python -m conduit bench && python -m conduit report`.
+30–50% of every run**. Reproduce with `conduit bench` then `conduit report`.
 
 | Configuration | Success | Cache hits | p50 | p95 | p99 | Cost / 1k req |
 |---|---|---|---|---|---|---|
@@ -67,32 +67,33 @@ client ─► HTTP server ─► 1 cache ──hit──► answer (0.15 ms exac
 - **Observability**: JSONL request logs, `/metrics`, Pandas summaries, six Matplotlib charts.
 - **Zero heavy dependencies**: standard-library HTTP; NumPy, Pandas, Matplotlib.
 
-## Quick start
-
-```bash
-pip install .
-python -m pytest -q          # 83 tests
-conduit stats                # cache + routing demo
-conduit serve                # gateway on http://127.0.0.1:8080/v1
-conduit tour                 # every course concept, demonstrated live
-```
-
-## Installation from PyPI
+## Installation
 
 ```bash
 pip install lochangowda10-conduit
 ```
+
+## Quick start
+
+```bash
+conduit stats                # cache + routing demo
+conduit serve                # gateway on http://127.0.0.1:8080/v1
+conduit tour                 # every course concept, demonstrated live
+conduit bench                # run the benchmark against simulated providers
+conduit report               # draw charts from the last benchmark run
+```
+
+Real providers: `cp config.example.json config.json`, export `GROQ_API_KEY` / `GEMINI_API_KEY`,
+check model IDs and prices in each provider's docs, then `conduit serve --config config.json`.
 
 ## Development install
 
 ```bash
 git clone https://github.com/lochangowda10/Conduit.git
 cd Conduit
-pip install .
+pip install -e ".[dev]"
+python -m pytest -q          # 83 tests
 ```
-
-Real providers: `cp config.example.json config.json`, export `GROQ_API_KEY` / `GEMINI_API_KEY`,
-check model IDs and prices in each provider's docs, then `python -m conduit serve --config config.json`.
 
 ## Design decisions
 
