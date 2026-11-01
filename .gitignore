@@ -9,3 +9,7 @@ config.json
 results/*.jsonl
 results/*_stdout.txt
 results/.done
+conduit.egg-info/
+*.whl
+dist/
+*.egg-info/

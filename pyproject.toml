@@ -32,7 +32,7 @@ dev = [
 ]
 
 [project.scripts]
-conduit = "conduit:main"
+conduit = "conduit.__main__:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
