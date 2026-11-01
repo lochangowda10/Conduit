@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lochangowda10-conduit"
-version = "1.0.1"
+version = "1.0.2"
 description = "A self-hosted, OpenAI-compatible LLM gateway that makes LLM calls cheaper, more reliable and faster"
 readme = "README.md"
 license = {text = "MIT"}
